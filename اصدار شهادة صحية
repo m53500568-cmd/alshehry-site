@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <title>إصدار شهادة صحية</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- روابط CSS الرسمية -->
+  <link href="https://apps.balady.gov.sa/BALADYCDN/Content/icons/fontawesome5/css/all.css" rel="stylesheet" />
+  <link href="https://apps.balady.gov.sa/BALADYCDN/Content/plugins/select2/css/select2.min.css" rel="stylesheet" />
+  <link href="https://apps.balady.gov.sa/BALADYCDN/Content/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://apps.balady.gov.sa/BALADYCDN/Content/css/app.min.css" rel="stylesheet" />
+  <link href="https://apps.balady.gov.sa/BALADYCDN/Content/unified_identity_assets/css/app.min.css" rel="stylesheet" />
+  <link href="https://apps.balady.gov.sa/BALADYCDN/Content/HijriDatePicker/jquery.calendars.picker.css" rel="stylesheet" />
+  <link href="https://apps.balady.gov.sa/BALADYCDN/Content/Validation.css" rel="stylesheet" />
+  <link href="https://apps.balady.gov.sa/BALADYCDN/Content/plugins/DataTables/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="https://apps.balady.gov.sa/BALADYCDN/Content/plugins/DataTables/Style.css" rel="stylesheet" />
+  <link href="https://apps.balady.gov.sa/BALADYCDN/Content/style.css?v=1" rel="stylesheet" />
+  <style>
+    /* صورة شخصية بحجم وتنسيق مطابق */
+    .profile-photo {
+      display: block;
+      margin: 0 auto 15px auto;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #008060;
+    }
+  </style>
+</head>
+<body class="loged-user">
+
+  <header class="header">
+    <button class="btn-menu" aria-label="فتح القائمة" id="menuBtn"><i class="fas fa-bars"></i></button>
+    <div class="logo">
+      <img src="https://apps.balady.gov.sa/BALADYCDN/Content/images/logo-balady.svg" alt="شعار خدمات بلدي" />
+      خدمات بلدي
+    </div>
+  </header>
+
+  <nav class="drawer" id="drawer">
+    <button class="close-btn" aria-label="إغلاق القائمة" id="closeBtn"><i class="fas fa-times"></i></button>
+    <ul>
+      <li><a href="#">الرئيسية</a></li>
+      <li><a href="#">شهادة صحية</a></li>
+      <li><a href="#">اتصل بنا</a></li>
+      <li><a href="#">شروط الاستخدام</a></li>
+      <li><a href="#">خريطة الموقع</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h2>شهادة صحية</h2>
+    <img src="https://i.ibb.co/3vW3d3g/seif-photo.jpg" alt="سيف الدوسري" class="profile-photo" />
+    <form>
+      <label>الأمانة</label>
+      <input type="text" value="أمانة حفر الباطن" readonly />
+      <label>البلدية</label>
+      <input type="text" value="بلدية القيصومة" readonly />
+      <label>الاسم</label>
+      <input type="text" value="سيف الدوسري" readonly />
+      <label>رقم الهوية</label>
+      <input type="text" value="2438077188" readonly />
+      <label>الجنس</label>
+      <input type="text" value="ذكر" readonly />
+      <label>الجنسية</label>
+      <input type="text" value="سعودي" readonly />
+      <label>رقم الشهادة الصحية</label>
+      <input type="text" value="43259964259" readonly />
+      <label>المهنة</label>
+      <input type="text" value="طاهي" readonly />
+      <label>تاريخ إصدار الشهادة الصحية هجري</label>
+      <input type="text" value="1447/06/23" readonly />
+      <label>تاريخ إصدار الشهادة الصحية ميلادي</label>
+      <input type="text" value="2025/12/03" readonly />
+      <label>تاريخ نهاية الشهادة الصحية هجري</label>
+      <input type="text" value="1448/06/23" readonly />
+      <label>تاريخ نهاية الشهادة الصحية ميلادي</label>
+      <input type="text" value="2026/11/22" readonly />
+      <label>نوع البرنامج التفتيشي</label>
+      <input type="text" readonly />
+      <label>تاريخ انتهاء البرنامج التفتيشي</label>
+      <input type="text" readonly />
+      <label>رقم الرخصة</label>
+      <input type="text" readonly />
+      <label>اسم المنشأة</label>
+      <input type="text" value="مؤسسة مكتب منصة دليلك للخدمات العامة" readonly />
+      <label>رقم المنشأة</label>
+      <input type="text" value="7049201143" readonly />
+    </form>
+  </main>
+
+  <footer>
+    <div>
+      رؤية 2030<br />
+      المملكة العربية السعودية<br />
+      © 2025 وزارة البلديات والإسكان
+    </div>
+    <nav>
+      <a href="#">اتصل بنا</a> |
+      <a href="#">شروط الاستخدام</a> |
+      <a href="#">خريطة الموقع</a>
+    </nav>
+  </footer>
+
+  <script>
+    const drawer = document.getElementById('drawer');
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+
+    menuBtn.addEventListener('click', () => {
+      drawer.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      drawer.classList.remove('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!drawer.contains(e.target) && !menuBtn.contains(e.target)) {
+        drawer.classList.remove('open');
+      }
+    });
+  </script>
+
+</body>
+</html>
